@@ -1,4 +1,4 @@
-# cs374_ip5
+# CS374 Individual Project 5
 
 A simple book search app prototype.
 
