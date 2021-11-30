@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "name": "Cloud Cuckoo Land",
+        "author": "Anthony Doerr",
+        "price": 23.99,
+        "qtyAvailable": 18,
+        "img": "1.jpg"
+    },
+    {
+        "id": "2", 
+        "name": "Bewilderment",
+        "author": "Richard Powers",
+        "price": 22.49,
+        "qtyAvailable": 7,
+        "img": "2.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Beautiful World, Where Are You",
+        "author": "Sally Rooney",
+        "price": 22.49,
+        "qtyAvailable": 85,
+        "img": "3.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Harlem Shuffle",
+        "author": "Colson Whitehead",
+        "price": 22.95,
+        "qtyAvailable": 56,
+        "img": "4.jpg"
+    },
+    {
+        "id": "5",
+        "name": "The Man Who Died Twice",
+        "author": "Richard Osman",
+        "price": 19.99,
+        "qtyAvailable": 22,
+        "img": "5.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Silverview",
+        "author": "John le Carré",
+        "price": 19.60,
+        "qtyAvailable": 48,
+        "img": "6.jpg"
+    },
+    {
+        "id": "7",
+        "name": "A Slow Fire Burning",
+        "author": "Paula Hawkins",
+        "price": 19.60,
+        "qtyAvailable": 67,
+        "img": "7.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Apples Never Fall",
+        "author": "Liane Moriarty",
+        "price": 20.29,
+        "qtyAvailable": 36,
+        "img": "8.jpg"
+    },
+    {
+        "id": "9",
+        "name": "The Book of Magic",
+        "author": "Alice Hoffman",
+        "price": 22.49,
+        "qtyAvailable": 0,
+        "img": "9.jpg"
+    },
+    {
+        "id": "10",
+        "name": "The Wish",
+        "author": "Nicholas Sparks",
+        "price": 19.60,
+        "qtyAvailable": 43,
+        "img": "10.jpg"
+    }
+]
