@@ -17,7 +17,14 @@ This is a templated class which can be used to search any list of ***data***. Th
 ## [BookPurchaseItem](lib/models/book_purchase_item.dart)
 This is simply an immutable data model used to hold the information about a book that can be purchased.
 
+## [ShoppingCart](lib/models/shopping_cart.dart)
+This is the data model for the shopping cart. It is used as the model for the MVC as well as the publisher for the observer pattern.
+The [ShoppingCartWidget](lib/widgets/shopping_cart.dart) is the main view for the ***ShoppingCart*** model. It subscribes to events ([HERE](lib/widgets/shopping_cart.dart#L14)) and rebuilds itself when any changes occur. The shopping cart icon on the home screen is also a subscriber to the shopping cart ([HERE](lib/main.dart#L74)). This allows the icon to display the number of items in the cart, and update anytime an item is added or removed. This is needed because items could be added from the home screen or removed from the shopping cart screen. To avoid having multiple controllers notify this widget to rebuild, we instead use the observer pattern to always get notifications when this model changes.
+
 ## Screenshots
-<img src="https://github.com/timlassiter11/CS374_IP5/blob/assets/home.png?raw=true" width="30%"></img>
-<img src="https://github.com/timlassiter11/CS374_IP5/blob/assets/search.png?raw=true" width="30%"></img>
-<img src="https://github.com/timlassiter11/CS374_IP5/blob/assets/search_no_results.png?raw=true" width="30%"></img> 
+<img src="https://raw.githubusercontent.com/timlassiter11/CS374_IP5/assets/home.png" width="30%"></img>
+<img src="https://raw.githubusercontent.com/timlassiter11/CS374_IP5/assets/home_cart_empty.png" width="30%"></img>
+<img src="https://raw.githubusercontent.com/timlassiter11/CS374_IP5/assets/search.png" width="30%"></img>
+<img src="https://raw.githubusercontent.com/timlassiter11/CS374_IP5/assets/cart.png" width="30%"></img>
+<img src="https://raw.githubusercontent.com/timlassiter11/CS374_IP5/assets/cart_empty.png" width="30%"></img>
+<img src="https://raw.githubusercontent.com/timlassiter11/CS374_IP5/assets/search_no_results.png" width="30%"></img> 
