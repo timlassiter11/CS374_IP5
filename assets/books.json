@@ -5,7 +5,7 @@
         "author": "Anthony Doerr",
         "price": 23.99,
         "qtyAvailable": 18,
-        "img": "1.jpg"
+        "img": "assets/images/books/1.jpg"
     },
     {
         "id": "2", 
@@ -13,7 +13,7 @@
         "author": "Richard Powers",
         "price": 22.49,
         "qtyAvailable": 7,
-        "img": "2.jpg"
+        "img": "assets/images/books/2.jpg"
     },
     {
         "id": "3",
@@ -21,7 +21,7 @@
         "author": "Sally Rooney",
         "price": 22.49,
         "qtyAvailable": 85,
-        "img": "3.jpg"
+        "img": "assets/images/books/3.jpg"
     },
     {
         "id": "4",
@@ -29,7 +29,7 @@
         "author": "Colson Whitehead",
         "price": 22.95,
         "qtyAvailable": 56,
-        "img": "4.jpg"
+        "img": "assets/images/books/4.jpg"
     },
     {
         "id": "5",
@@ -37,7 +37,7 @@
         "author": "Richard Osman",
         "price": 19.99,
         "qtyAvailable": 22,
-        "img": "5.jpg"
+        "img": "assets/images/books/5.jpg"
     },
     {
         "id": "6",
@@ -45,7 +45,7 @@
         "author": "John le Carré",
         "price": 19.60,
         "qtyAvailable": 48,
-        "img": "6.jpg"
+        "img": "assets/images/books/6.jpg"
     },
     {
         "id": "7",
@@ -53,7 +53,7 @@
         "author": "Paula Hawkins",
         "price": 19.60,
         "qtyAvailable": 67,
-        "img": "7.jpg"
+        "img": "assets/images/books/7.jpg"
     },
     {
         "id": "8",
@@ -61,7 +61,7 @@
         "author": "Liane Moriarty",
         "price": 20.29,
         "qtyAvailable": 36,
-        "img": "8.jpg"
+        "img": "assets/images/books/8.jpg"
     },
     {
         "id": "9",
@@ -69,7 +69,7 @@
         "author": "Alice Hoffman",
         "price": 22.49,
         "qtyAvailable": 0,
-        "img": "9.jpg"
+        "img": "assets/images/books/9.jpg"
     },
     {
         "id": "10",
@@ -77,6 +77,6 @@
         "author": "Nicholas Sparks",
         "price": 19.60,
         "qtyAvailable": 43,
-        "img": "10.jpg"
+        "img": "assets/images/books/10.jpg"
     }
 ]

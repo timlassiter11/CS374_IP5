@@ -8,12 +8,15 @@ class PurchaseItem {
   final String name;
   final String img;
 
-  const PurchaseItem(
-      {required this.id,
-      required this.price,
-      required this.qtyAvailable,
-      required this.name,
-      required this.img});
+  const PurchaseItem({
+    required this.id,
+    required this.price,
+    required this.qtyAvailable,
+    required this.name,
+    required this.img,
+  });
+
+  bool get available => qtyAvailable > 0;
 
   factory PurchaseItem.fromJson(Map<String, dynamic> json) {
     return PurchaseItem(

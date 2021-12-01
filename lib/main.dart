@@ -1,15 +1,26 @@
 import 'dart:convert';
 
 import 'package:cs374_ip5/models/book_purchase_item.dart';
+import 'package:cs374_ip5/models/shopping_cart.dart';
 import 'package:cs374_ip5/utils/fuzzy_search.dart';
 import 'package:cs374_ip5/widgets/book_card.dart';
+import 'package:cs374_ip5/widgets/icon_with_badge.dart';
+import 'package:cs374_ip5/widgets/shopping_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 const String appTitle = 'Boundless Books';
 
 void main() {
-  runApp(const MyApp());
+  // Observer - Publisher
+  // We create a single ShippingCart instance here
+  // We then provide this instance to the entire widget tree below.
+  // If anything modifies this object, all of the subscribers will be notified
+  runApp(ChangeNotifierProvider(
+    create: (_) => ShoppingCart(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -23,6 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -56,6 +68,45 @@ class _MyHomePageState extends State<MyHomePage> {
                   context: context, delegate: BookSearch(_books));
             },
           ),
+          // Observer - Subscriber
+          // Anytime the shopping cart changes the builder function will
+          // run which forces the widget to rebuild with the new data
+          Consumer<ShoppingCart>(
+            builder: (_, cart, child) {
+              return IconButton(
+                icon: IconWithBadge(
+                  const Icon(Icons.shopping_cart_outlined),
+                  top: -5.0,
+                  right: -5.0,
+                  badge: cart.isNotEmpty
+                      ? Container(
+                          width: 15,
+                          height: 15,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: const BoxDecoration(
+                              color: Colors.red, shape: BoxShape.circle),
+                          child:
+                              Center(child: Text(cart.items.length.toString())),
+                        )
+                      : null,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      fullscreenDialog: true,
+                      builder: (BuildContext context) => Scaffold(
+                        appBar: AppBar(
+                          title: const Text('Cart'),
+                        ),
+                        body: const SafeArea(child: ShoppingCartWidget()),
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+          )
         ],
       ),
       body: _isLoading
@@ -70,7 +121,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     price: item.price,
                     qtyAvailable: item.qtyAvailable,
                     author: item.author,
-                    img: "assets/images/books/${item.img}",
+                    img: item.img,
+                    actions: <Widget>[
+                      TextButton(
+                        child: item.available
+                            ? const Text('Add to Cart')
+                            : const Text('Out of Stock'),
+                        onPressed: item.available
+                            ? () => context.read<ShoppingCart>().addItem(item)
+                            : null,
+                      )
+                    ],
                   );
                 },
               ),
@@ -139,7 +200,7 @@ class BookSearch extends SearchDelegate<BookPurchaseItem?> {
           price: item.price,
           qtyAvailable: item.qtyAvailable,
           author: item.author,
-          img: "assets/images/books/${item.img}",
+          img: item.img,
         );
       },
     );
