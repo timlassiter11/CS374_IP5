@@ -8,6 +8,9 @@ class ShoppingCartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Observer - Subscriber
+    // BuildContext.watch allows us to subscribe to the shopping carts
+    // changes and rebuild this widget on any updates.
     final ShoppingCart cart = context.watch<ShoppingCart>();
     if (cart.items.isEmpty) {
       return Center(
